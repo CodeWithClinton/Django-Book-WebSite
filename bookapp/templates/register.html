@@ -1,0 +1,51 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Book Site | Register</title>
+{% endblock %}
+
+
+{% block content %}
+<div id = 'container'>
+    <div class = 'header'>
+      <h2>Create an account</h2>
+    </div>
+    <form action = '#' method = 'POST'>
+      {% csrf_token %}
+      <div id = 'form-control'>
+          <label>Username:</label>
+          <!-- <input type="text" name="username" class="form-control" placeholder="Enter Username" maxlength="100" autofocus="" required=""> -->
+          {{register_form.username}}
+        </div>
+        <div id = 'form-control'>
+          <label>Email:</label>
+          <!-- <input type= "email" name="email" class="form-control" placeholder="Enter EmailAddress" maxlength="100" autofocus="" required=""> -->
+          {{register_form.email}}
+        </div>
+  
+      <div id = 'form-control'>
+          <label>Password:</label>
+          <!-- <input type="password" name="password1" class="form-control" placeholder="At least eight characters" maxlength="100" autofocus="" required=""> -->
+          {{register_form.password1}}
+        </div>
+  
+       <div id = 'form-control'>
+          <label>Confirm Password:</label>
+          <!-- <input type="password" name="password2" class="form-control" placeholder="Confirm password" maxlength="100" autofocus="" required=""> -->
+          {{register_form.password2}}
+        </div>
+      
+        {{register_form.errors}}
+
+  
+      <div id = 'haveAnAccount'>
+        <p>Already have an account?</p>
+        <a href = "{% url 'login' %}"><strong>Login</strong></a>
+      </div>
+      <button type = 'submit' id = 'submitButton'>Register</button>
+    </form>
+  </div>
+  {% endblock %}

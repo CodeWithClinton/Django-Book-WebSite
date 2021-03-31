@@ -1,0 +1,130 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Calibri;
+}
+header, footer{
+    width: 100%;
+    height: 50px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#logo{
+    width: 80px;
+    height: 80px;
+}
+#logo img{
+    width: 100%;
+    height: 100%;
+}
+
+nav{
+    overflow: none;
+}
+#navbarNav{
+    justify-content: center !important;
+     
+}
+#navbarNav ul{
+    width: 500px;
+    justify-content: space-evenly;
+}
+#navbarNav ul li a{
+    font-size: 18px;
+    /* font-weight: bold; */
+}
+
+#genreNavContainer{
+    width: 100%;
+    list-style: none;
+    justify-content: center;
+    height: auto;
+    /* overflow: auto; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .btn-secondary, .dropdown a{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+    padding: 10px 10px 10px 10px;
+    background-color: lightgray !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px !important;
+    border: none;
+} */
+/* #formContainer{
+    margin: 20px 0px 20px 40%;
+    display: flex;
+    width: auto;
+}
+label{
+    display: none;
+} */
+
+#formContainer #id_name{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    border: 2px solid darkblue;
+    font-size: 15px;
+    padding: 0px 0px 0px 10px;
+}
+/*  */
+.input {
+    width: 200px;
+    height: autopx;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.button{
+    width: 100px;
+    height: 40px;
+    background-color: lightgray;
+    color: black;
+    border-radius: 5px;
+    margin-left: auto ;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.navbar-collapse{
+    justify-content: space-evenly !important;
+    /* display: block !important; */
+    /* border: 3px solid black; */
+}
+.navbar-collapse ul{
+    width: 200px !important;
+    /* border: 3px solid black; */
+    justify-content: space-between;
+}
+.navbar-collapse ul li a{
+    font-weight: bold;
+    font-size: 18px;
+}
+/* .d-flex{
+    width: 300px !important;
+    border: 2px solid blue;
+    justify-content: space-around !important;
+} */
+.mr-auto, .mx-auto{
+    margin-right: 0px !important;
+    justify-content: space-between;
+    width: 200px; 
+    /* border: 2px solid black; */
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

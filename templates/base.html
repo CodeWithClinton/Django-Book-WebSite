@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+    
+    <link rel = 'stylesheet' href ="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel = 'stylesheet' href ="{% static 'css/style.css' %}">
+    <link rel = 'stylesheet' href ="{% static 'css/register.css' %}">
+    <link rel = 'stylesheet' href ="{% static 'css/style.css' %}">
+    <link rel = 'stylesheet' href ="{% static 'css/home.css' %}">
+    <link rel = 'stylesheet' href ="{% static 'css/book_detail.css' %}">
+    <link rel = 'stylesheet' href = "{% static 'uikit/css/uikit.css' %}">
+    
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div id = 'logo'>
+        <img src = "{% static 'img/pdf 3.png' %}">
+      </div>
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'all_books' %}">Books</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" method = 'POST' action = "{% url 'book_search' %}" style="margin: 0px;">
+          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+          {% csrf_token %}
+          {{search_form.name_of_book}}
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      <div style = 'width: auto; display: flex'>
+        
+        {% if user.is_authenticated %}
+         <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Hello {{user.username}}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Upload Book</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </div> 
+        
+        {% else %}
+          <a class="nav-link" href="{% url 'register' %}">
+            <button type="button" class="btn btn-outline-primary">Sign Up</button></a>
+            <a class="nav-link" href="{% url 'login' %}">
+              <button type="button" class="btn btn-outline-success">Login</button>
+            </a>
+            
+      {% endif %}
+      </div>
+      </div>
+    </div>
+  </nav>
+    
+    
+            
+            
+        
+      <p uk-margin style = "width: 80%; margin: auto; margin-top: 20px">
+        {% for category in categories %}
+        <a class="uk-button uk-button-default" href="{% url 'category_detail' category.slug %}"><strong>{{category.name}}</strong></a>
+        {% endfor %}
+    </p>
+    
+      
+
+
+
+{% block content %}
+<h1>Hello World</h1>
+{% endblock %}
+
+
+
+
+
+
+
+      
+    <footer>
+        <h4><strong>Enjoy Your Day With Free Fascinating Books</strong></h4>
+    </footer>
+   
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    
+</body>
+</html> 

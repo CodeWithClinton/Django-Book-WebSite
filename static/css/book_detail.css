@@ -1,0 +1,108 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+#imageContainer{
+    width: 250px;
+    height: 500px;
+    border: 4px solid black;
+}
+#imageContainer img{
+    width: 100%;
+    height: 100%;
+}
+#genreBookContainer{
+    width: 70%;
+    height: auto;
+    margin: auto;
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: space-between;
+}
+#bookTitle, #bookAuthor{
+    font-size: 18px;
+    font-weight: bold;
+}
+#summary{
+    width: 600px;
+    height: 400px;
+    /* border: 3px solid black; */
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+/* #summary p{
+    font-size: 20px;
+    font-weight: bold;
+} */
+#buy, #download{
+    width: 200px;
+    height: 50px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    /* font-weight: bold; */
+    margin-top: auto;
+    cursor: pointer;
+}
+#bookTitle, #bookAuthor{
+    text-decoration: none;
+}
+#similarBooksContainer{
+    width: 80%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    /* border: 3px solid black; */
+}
+#similarBooks{
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
+#similarBooksImage{
+    height: 300px;
+    /* border: 3px solid darkblue; */
+
+}
+#similarBooksImage Img{
+    width: 100%;
+    height: 100%;
+}
+#summaryHeading{
+    text-align: center;
+}
+/* #similarBooksContainer h3{
+    font-size: 20px;
+    font-weight: bold;
+} */
+#summaryContent{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 20px 0px 10px;
+    border: 2px solid blue;
+}
+
+#summaryContent h4{
+    text-align: justify;
+    /* margin: 10px 0px 10px 0px; */
+}

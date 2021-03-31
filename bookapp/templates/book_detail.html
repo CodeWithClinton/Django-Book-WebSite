@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+     <title>Book Site | Book Detail </title>
+     {% endblock %}
+
+{% block content %}
+
+<div class = 'container' style = 'border: 2px solid black; width: 80%'>
+    <div class = 'row' style = 'border: 2px solid black'>
+        <div class = 'col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4'>
+            
+            <div id = 'imageContainer'>
+                <img src = '{{book.cover_image.url}}'>
+            </div>
+        </div>
+        <div class = 'col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8'>
+            <div id = 'summaryContent'>
+                <h1>{{book.title}}</h1>
+                <h2>by: <strong>{{book.author}}</strong></h2>
+                <h3>Book Summary:</h3>
+                <h4>{{book.summary}}</h4>
+                
+                
+                <a href = '{{book.pdf.url}}' download="{{book.pdf.url}}">
+                <button id = 'download'>
+                    Download PDF
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                      </svg>
+                </button>
+            </a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<div class = 'container'>
+    <div class = 'row'>
+        <h4>Similar Books</h4>            
+    </div>
+    <div class = 'row'>
+        {% for similar_book in similar_books %}
+        <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+      <a href = "{% url 'book_detail' similar_book.slug %}">
+        <div>
+          <div class="uk-card uk-card-default uk-card-body"> 
+              <img src = "{{similar_book.cover_image.url}}">
+             
+          </div>
+      </div>
+    </a>
+    </div>
+    {% endfor %}
+
+    </div>
+    
+</div>
+{% endblock %}

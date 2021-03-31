@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Book Site | Home</title>
+    {% endblock %}
+  {% block content %}  
+<div class = 'container'>
+  <div class = 'row'><h4>Recommended Books</h4></div>
+  <div class = 'row'>
+    {% for book in recommended_books %}
+    <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+      <a href = "{% url 'book_detail' book.slug %}">
+        <div>
+          <div class="uk-card uk-card-default uk-card-body"> 
+              <img src = "{{book.cover_image.url}}">
+             
+          </div>
+      </div>
+    </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<div class = 'container'>
+  <div class = 'row'><h4>Top Fiction Books</h4></div>
+  <div class = 'row'>
+    {% for book in fiction_books %}
+    <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+      <a href = "">
+        <div>
+          <div class="uk-card uk-card-default uk-card-body"> 
+             <img src = "{{book.cover_image.url}}">
+          </div>
+      </div>
+    </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<div class = 'container'>
+    <div class = 'row'><h4>Top Business Books</h4></div>
+    <div class = 'row'>
+        {% for book in business_books %}
+      <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+        <a href = "">
+          <div>
+            <div class="uk-card uk-card-default uk-card-body"> 
+               <img src = "{{book.cover_image.url}}">
+            </div>
+        </div>
+      </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+{% endblock %}

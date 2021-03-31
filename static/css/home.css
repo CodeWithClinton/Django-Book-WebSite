@@ -1,0 +1,21 @@
+.container{
+    margin: 10px auto 20px auto;
+}
+.row{
+    justify-content: center;
+}
+
+.uk-card-body{
+    width: 180px; 
+    height: 350px;
+    padding: 3px 3px 3px 3px !important; 
+    margin: 0px 10px 20px 10px; 
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.uk-card-body img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+}
